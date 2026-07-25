@@ -25,12 +25,12 @@ function Skills() {
     {
       name: "JavaScript",
       icon: <FaJs />,
-      level: "Intermediate",
+      level: "Advanced",
     },
     {
       name: "Java",
       icon: <FaJava />,
-      level: "Beginner",
+      level: "Advanced",
     },
     {
       name: "React",
@@ -40,17 +40,17 @@ function Skills() {
     {
       name: "Python",
       icon: <FaPython />,
-      level: "Intermediate",
+      level: "Advanced",
     },
     {
       name: "VB.NET",
       icon: <SiDotnet />,
-      level: "Intermediate",
+      level: "Advanced",
     },
     {
       name: "MySQL",
       icon: <SiMysql />,
-      level: "Intermediate",
+      level: "Advanced",
     },
     {
       name: "Git & GitHub",
