@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 import Loader from "./components/Loader";
 import ScrollProgress from "./components/ScrollProgress";
+import MiniProjects from "./components/MiniProjects/MiniProjects";
 import Timeline from "./components/Timeline";
 import { useState, useEffect } from "react";
 import Stats from "./components/Stats";
@@ -46,6 +47,8 @@ function App() {
       <Skills />
 
       <Projects />
+
+      <MiniProjects />
 
       <Timeline />
 
