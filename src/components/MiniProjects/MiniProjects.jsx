@@ -1,7 +1,11 @@
 import "./MiniProjects.css";
+
 import miniProjects from "../../data/miniProjects";
+
 import { useState } from "react";
+
 import MiniProjectModal from "./MiniProjectModal";
+
 
 import {
   FaGithub,
@@ -15,222 +19,645 @@ import {
   FaSearch,
 } from "react-icons/fa";
 
-import { SiJavascript, SiReact, SiPhp } from "react-icons/si";
-import { TbBrandCpp } from "react-icons/tb";
+
+import {
+  SiJavascript,
+  SiReact,
+  SiPhp,
+} from "react-icons/si";
+
+
+import {
+  TbBrandCpp
+} from "react-icons/tb";
+
+
 
 function getLanguageIcon(language) {
-  switch (language) {
+
+
+  switch(language){
+
+
     case "Java":
       return <FaJava />;
+
 
     case "Python":
       return <FaPython />;
 
+
     case "JavaScript":
       return <SiJavascript />;
+
 
     case "React":
       return <SiReact />;
 
+
     case "C & C++":
       return <TbBrandCpp />;
+
 
     case "PHP":
       return <SiPhp />;
 
+
     default:
       return <FaCode />;
+
   }
+
 }
 
-function getProjectIcon(title) {
-  if (title.includes("Calculator")) return <FaCalculator />;
+
+
+
+
+function getProjectIcon(title){
+
+
+  if(title.includes("Calculator"))
+    return <FaCalculator />;
+
+
   return <FaCode />;
+
 }
 
-function MiniProjects() {
 
-  const [selectedLanguage, setSelectedLanguage] = useState("All");
-  const [search, setSearch] = useState("");
-  const [selectedProject, setSelectedProject] = useState(null);
 
-  const languages = [
-    "All",
-    "Java",
-    "JavaScript",
-    "Python",
-    "React",
-    "C & C++",
-    "PHP",
-    "other",
-  ];
 
-  const filteredProjects = miniProjects.filter((project) => {
 
-    const languageMatch =
-      selectedLanguage === "All" ||
-      project.language === selectedLanguage;
+function MiniProjects(){
 
-    const searchMatch =
-      project.title
-        .toLowerCase()
-        .includes(search.toLowerCase());
 
-    return languageMatch && searchMatch;
-  });
+const [selectedLanguage,setSelectedLanguage]=useState("All");
 
-  return (
-    <>
-      <section
-        id="mini-projects"
-        className="mini-projects-section"
-      >
+const [search,setSearch]=useState("");
 
-        <p className="section-subtitle">
-          Practice Makes Perfect
-        </p>
+const [selectedProject,setSelectedProject]=useState(null);
 
-        <h2>Mini Projects</h2>
 
-        {/* FILTER */}
 
-        <div className="filter-container">
 
-          {languages.map((language) => (
+const languages=[
 
-            <button
-              key={language}
-              className={
-                selectedLanguage === language
-                  ? "filter-btn active-filter"
-                  : "filter-btn"
-              }
-              onClick={() => setSelectedLanguage(language)}
-            >
-              {language}
-            </button>
+"All",
+"Java",
+"JavaScript",
+"Python",
+"React",
+"C & C++",
+"PHP"
 
-          ))}
+];
 
-        </div>
 
-        {/* SEARCH */}
 
-        <div className="search-box">
 
-          <FaSearch />
 
-          <input
-            type="text"
-            placeholder="Search Project..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
+const filteredProjects = miniProjects.filter((project)=>{
 
-        </div>
 
-        {/* PROJECTS */}
+const projectLanguage =
+project.language ||
+project.technologies?.[0];
 
-        <div className="mini-projects-grid">
 
-          {filteredProjects.length > 0 ? (
 
-            filteredProjects.map((project) => (
+const languageMatch =
 
-              <div
-                className="premium-card"
-                key={project.id}
-                onClick={() => setSelectedProject(project)}
-              >
+selectedLanguage==="All" ||
 
-                <div className="card-top">
+projectLanguage===selectedLanguage ||
 
-                  <div className="project-icon">
-                    {getProjectIcon(project.title)}
-                  </div>
+project.technologies?.includes(selectedLanguage);
 
-                  <span
-                    className={`difficulty ${project.difficulty.toLowerCase()}`}
-                  >
-                    ● {project.difficulty}
-                  </span>
 
-                </div>
 
-                <h3>{project.title}</h3>
+const searchMatch =
 
-                <p>{project.description}</p>
+project.title
+.toLowerCase()
+.includes(
+search.toLowerCase()
+);
 
-                <div className="project-info">
 
-                  <span>
-                    {getLanguageIcon(project.language)}
-                    {project.language}
-                  </span>
 
-                  <span>
-                    <FaClock />
-                    {project.duration}
-                  </span>
+return languageMatch && searchMatch;
 
-                  <span>
-                    <FaStar />
-                    {project.rating}
-                  </span>
 
-                </div>
+});
 
-                <div className="project-buttons">
 
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="github-btn"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <FaGithub />
-                    GitHub
-                  </a>
 
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="live-btn"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <FaExternalLinkAlt />
-                    Live Demo
-                  </a>
 
-                </div>
 
-              </div>
 
-            ))
+return (
 
-          ) : (
+<>
 
-            <div className="no-project">
 
-              😕 No Project Found
+<section
+id="mini-projects"
+className="mini-projects-section"
+>
 
-            </div>
 
-          )}
+<p className="section-subtitle">
 
-        </div>
+Practice Makes Perfect
 
-      </section>
+</p>
 
-      <MiniProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
 
-    </>
-  );
+
+<h2>
+
+Mini Projects
+
+</h2>
+
+
+
+
+
+{/* FILTER */}
+
+
+<div className="filter-container">
+
+
+{
+
+languages.map((language)=>(
+
+
+<button
+
+key={language}
+
+className={
+
+selectedLanguage===language
+
+?
+
+"filter-btn active-filter"
+
+:
+
+"filter-btn"
+
 }
+
+
+onClick={()=>setSelectedLanguage(language)}
+
+>
+
+
+{language}
+
+
+</button>
+
+
+))
+
+}
+
+
+</div>
+
+
+
+
+
+
+
+{/* SEARCH */}
+
+
+
+<div className="search-box">
+
+
+<FaSearch />
+
+
+<input
+
+
+type="text"
+
+placeholder="Search Project..."
+
+value={search}
+
+onChange={(e)=>setSearch(e.target.value)}
+
+
+/>
+
+
+</div>
+
+
+
+
+
+
+
+
+{/* PROJECT GRID */}
+
+
+
+<div className="mini-projects-grid">
+
+
+
+{
+
+
+filteredProjects.length > 0 ?
+
+
+filteredProjects.map((project)=>(
+
+
+<div
+
+className="premium-card"
+
+key={project.id}
+
+onClick={()=>setSelectedProject(project)}
+
+>
+
+
+
+
+
+{/* IMAGE */}
+
+
+<div className="project-image">
+
+
+<img
+
+src={project.image}
+
+alt={project.title}
+
+
+/>
+
+
+</div>
+
+
+
+
+
+
+
+<div className="card-top">
+
+
+
+<div className="project-icon">
+
+
+{
+getProjectIcon(project.title)
+}
+
+
+</div>
+
+
+
+
+
+<span
+
+className={
+
+`difficulty ${
+project.difficulty?.toLowerCase() || ""
+}`
+
+}
+
+>
+
+
+● {project.difficulty}
+
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h3>
+
+{project.title}
+
+</h3>
+
+
+
+
+
+<p>
+
+{project.description}
+
+</p>
+
+
+
+
+
+
+
+{/* TECHNOLOGY */}
+
+
+
+<div className="tech-list">
+
+
+{
+
+project.technologies?.map((tech)=>(
+
+
+<span key={tech}>
+
+{tech}
+
+</span>
+
+
+))
+
+
+}
+
+
+</div>
+
+
+
+
+
+
+
+
+{/* INFO */}
+
+
+
+<div className="project-info">
+
+
+
+<span>
+
+
+{
+
+getLanguageIcon(
+
+project.language ||
+
+project.technologies?.[0]
+
+)
+
+}
+
+
+{
+
+project.language ||
+
+project.technologies?.[0]
+
+}
+
+
+
+</span>
+
+
+
+
+
+
+<span>
+
+
+<FaClock />
+
+
+{project.duration || "N/A"}
+
+
+</span>
+
+
+
+
+
+
+<span>
+
+
+<FaStar />
+
+
+{project.rating || "N/A"}
+
+
+</span>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+{/* BUTTONS */}
+
+
+
+<div className="project-buttons">
+
+
+
+
+
+<a
+
+
+href={project.github || "#"}
+
+
+target="_blank"
+
+rel="noreferrer"
+
+className="github-btn"
+
+
+onClick={(e)=>e.stopPropagation()}
+
+>
+
+
+<FaGithub />
+
+
+GitHub
+
+
+</a>
+
+
+
+
+
+
+
+<a
+
+
+href={project.live || "#"}
+
+
+target="_blank"
+
+rel="noreferrer"
+
+className="live-btn"
+
+
+onClick={(e)=>e.stopPropagation()}
+
+>
+
+
+<FaExternalLinkAlt />
+
+
+Live Demo
+
+
+</a>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+))
+
+
+
+
+
+:
+
+
+
+
+
+<div className="no-project">
+
+
+😕 No Project Found
+
+
+</div>
+
+
+
+}
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<MiniProjectModal
+
+project={selectedProject}
+
+onClose={()=>setSelectedProject(null)}
+
+/>
+
+
+
+
+
+</>
+
+
+);
+
+
+}
+
+
 
 export default MiniProjects;
