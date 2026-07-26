@@ -16,11 +16,12 @@ function Hero() {
         <h1 className="gradient-name">
           Narendra Dodke
         </h1>
+        <h3>I am a </h3>
 
         <h2>
           <TypeAnimation
             sequence={[
-              "BCA Student",
+              "Programmer",
               2000,
               "Web Developer",
               2000,
