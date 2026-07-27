@@ -21,7 +21,7 @@ function Hero() {
         <h2>
           <TypeAnimation
             sequence={[
-              "Programmer",
+              "Programmer", 
               2000,
               "Web Developer",
               2000,
