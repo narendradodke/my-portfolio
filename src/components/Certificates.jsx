@@ -1,15 +1,15 @@
 function Certificates() {
   const certificates = [
     {
-      title: "Web Development Certificate",
-      issuer: "Certificate Issuer",
-      year: "2025",
-      image: "/certificates/web-development.jpg",
+      title: "MY SQL Certificate (Basic)",
+      issuer: "HackerRank",
+      year: "28 JUL 2026",
+      image: "https://www.hackerrank.com/certificates/iframe/d7218ffc1c4c",
     },
 
     {
       title: "JavaScript Certificate",
-      issuer: "Certificate Issuer",
+      issuer: "Certificate Issuer ",
       year: "2025",
       image: "/certificates/javascript.jpg",
     },
