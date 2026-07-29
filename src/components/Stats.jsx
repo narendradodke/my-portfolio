@@ -2,7 +2,7 @@ function Stats() {
   const stats = [
     { number: 2, suffix: "+", title: "Projects" },
     { number: 10, suffix: "+", title: "Skills" },
-    { number: 1, suffix: "+", title: "Certificates" },
+    { number: 12, suffix: "+", title: "Certificates" },
     { number: 3, suffix: "+", title: "Years Learning" },
   ];
 
