@@ -25,16 +25,16 @@ const miniProjects = [
     ],
 
 
-    difficulty:"Beginner",
+    difficulty:"Advanced",
 
-    duration:"5 Days",
+    duration:"2 Days",
 
     rating:"4.8",
 
 
-    github:"#",
+    github:"https://github.com/narendradodke/React-calculator",
 
-    live:"#"
+    live:"https://react-calculator-blush-psi.vercel.app"
 
   },
 
