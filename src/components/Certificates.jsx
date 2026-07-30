@@ -27,16 +27,16 @@ function Certificates() {
     {
       title: "JavaScript Certificate",
 
-      issuer: "Certificate Issuer",
+      issuer: "HackerRank",
 
       description:
         "Completed JavaScript fundamentals including DOM manipulation, ES6 features and event handling.",
 
-      year: "2025",
+      year: "30 Jul 2026",
 
-      viewLink: "#",
+      viewLink: "https://www.hackerrank.com/certificates/iframe/163da68d2167",
 
-      verifyLink: "https://www.hackerrank.com/certificates/d858761b9e90",
+      verifyLink: "https://www.hackerrank.com/certificates/163da68d2167",
     },
 
     {
@@ -67,6 +67,21 @@ function Certificates() {
       viewLink: "https://www.hackerrank.com/certificates/iframe/d3b2fdb9b784",
 
       verifyLink: "https://www.hackerrank.com/certificates/d3b2fdb9b784",
+    },
+
+    {
+      title: "Python Certificate",
+
+      issuer: "Simplilearn",
+
+      description:
+        "Python Certified.",
+
+      year: "30 Jul 2026",
+
+      viewLink: "#",
+
+      verifyLink: "#",
     },
 
     {
@@ -122,11 +137,11 @@ function Certificates() {
       description:
         " Experienced in responsive design, hooks, and modern UI/UX practices.",
 
-      year: "29 Jul 2026",
+      year: "30 Jul 2026",
 
-      viewLink: "#",
+      viewLink: "https://www.hackerrank.com/certificates/iframe/b49c4b0b5a11",
 
-      verifyLink: "#",
+      verifyLink: "https://www.hackerrank.com/certificates/b49c4b0b5a11",
     },
 
     {
@@ -137,11 +152,11 @@ function Certificates() {
       description:
         "Knowledge of server-side scripting, APIs, and asynchronous programming..",
 
-      year: "29 Jul 2026",
+      year: "30 Jul 2026",
 
-      viewLink: "#",
+      viewLink: "https://www.hackerrank.com/certificates/iframe/15f3dd61106f",
 
-      verifyLink: "#",
+      verifyLink: "https://www.hackerrank.com/certificates/15f3dd61106f",
     },
 
     {
@@ -154,9 +169,9 @@ function Certificates() {
 
       year: "29 Jul 2026",
 
-      viewLink: "#",
+      viewLink: "https://www.hackerrank.com/certificates/iframe/a19cbd6f0cec",
 
-      verifyLink: "#",
+      verifyLink: "https://www.hackerrank.com/certificates/a19cbd6f0cec",
     },
 
     {
