@@ -69,20 +69,6 @@ function Certificates() {
       verifyLink: "https://www.hackerrank.com/certificates/d3b2fdb9b784",
     },
 
-    {
-      title: "Python Certificate",
-
-      issuer: "Simplilearn",
-
-      description:
-        "Python Certified.",
-
-      year: "30 Jul 2026",
-
-      viewLink: "#",
-
-      verifyLink: "#",
-    },
 
     {
       title: "C# Certificate",
