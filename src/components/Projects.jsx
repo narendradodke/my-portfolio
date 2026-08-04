@@ -10,7 +10,7 @@ function Projects() {
       description:
         "A desktop-based hospital management system designed to manage hospital-related information and operations.",
       technologies: ["VB.NET", "MS Access", "Visual Studio 2010"],
-      github: "#",
+      github: "https://github.com/narendradodke",
       demo: "#",
       image: "/hospital.png",
     },
@@ -19,8 +19,8 @@ function Projects() {
       description:
         "A modern and responsive portfolio website built using React, JavaScript and CSS.",
       technologies: ["React", "JavaScript", "CSS"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/narendradodke/my-portfolio",
+      demo: "https://my-portfolio-ecru-mu-86.vercel.app/",
       image: "/portfolio.png",
     },
   ];
