@@ -92,13 +92,13 @@ const miniProjects = [
     image:"/atm.png",
 
     description:
-    "ATM simulation project using Java OOP concepts with deposit and withdraw operations.",
+    "ATM simulation project using React and JavaScript with deposit and withdraw operations.",
 
 
     technologies:[
-      "Java",
-      "OOP",
-      "Logic Building"
+      "React",
+      "CSS",
+      "JavaScript"
     ],
 
 
