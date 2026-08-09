@@ -46,7 +46,7 @@ const miniProjects = [
 
     title:"Student Management System",
 
-    image:"/student.png",
+    image:"/guess-game.png",
 
     description:
     "Console based CRUD project for managing student records using Java.",
@@ -110,16 +110,16 @@ const miniProjects = [
     ],
 
 
-    difficulty:"Intermediate",
+    difficulty:"Advanced",
 
     duration:"3 Days",
 
     rating:"4.7",
 
 
-    github:"#",
+    github:"https://github.com/narendradodke/ATM",
 
-    live:"#"
+    live:"https://atm-ruddy-pi.vercel.app"
 
   },
 
@@ -132,10 +132,49 @@ const miniProjects = [
 
     title:"Number Guess Game",
 
-    image:"/guess-game.png",
+    image:"/student.png",
 
     description:
     "Python based guessing game using random module and loops.",
+
+
+    technologies:[
+      "Python",
+      "Random Module",
+      "Loops"
+    ],
+
+
+    features:[
+      "Random Number Generation",
+      "Score System",
+      "User Interaction"
+    ],
+
+
+    difficulty:"Beginner",
+
+    duration:"1 Day",
+
+    rating:"4.6",
+
+
+    github:"#",
+
+    live:"#"
+
+  },
+
+
+  {
+    id:5,
+
+    title:"One Time Password Generator (OTP)",
+
+    image:"/student.png",
+
+    description:
+    "",
 
 
     technologies:[
