@@ -174,6 +174,21 @@ function Certificates() {
 
       verifyLink: "https://simpli-web.app.link/e/26wwIKfua5b",
     },
+
+     {
+      title: "REST API (Intermediate) Certificate",
+
+      issuer: "HackerRank",
+
+      description:
+        "REST API Certified: Connecting systems with clean, efficient endpoints.",
+
+      year: "19 Aug 2026",
+
+      viewLink: "https://www.hackerrank.com/certificates/iframe/c466804089dc",
+
+      verifyLink: "https://www.hackerrank.com/certificates/c466804089dc",
+    },
   ];
 
   return (
