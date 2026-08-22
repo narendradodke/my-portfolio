@@ -8,6 +8,23 @@ import {
 function Certificates() {
   const certificates = [
     {
+      title: "HackInMotion Certificate 2026",
+
+      issuer: "RICR",
+
+      description:
+        "HackInMotion 2026 - Certificate of Participation: Showcased creativity, innovation, teamwork, technical skills, and problem-solving in Environment & Cleantech theme.",
+
+      year: " 15 Aug 2026",
+
+      viewLink:
+        "https://drive.google.com/file/d/1X2Li7oa3WRpnn4OPfI6QGmmmMW_75TCm/view?usp=drive_link",
+
+      verifyLink:
+        "https://drive.google.com/file/d/1X2Li7oa3WRpnn4OPfI6QGmmmMW_75TCm/view?usp=drive_link",
+    },
+
+    {
       title: "MY SQL Certificate",
 
       issuer: "HackerRank",
