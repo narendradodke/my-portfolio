@@ -10,6 +10,7 @@ function ProjectModal({ project, onClose }) {
         <button
           className="modal-close"
           onClick={onClose}
+          aria-label="Close modal"
         >
           ✕
         </button>
@@ -25,8 +26,8 @@ function ProjectModal({ project, onClose }) {
         <p>{project.description}</p>
 
         <div className="technologies">
-          {project.technologies.map((tech, index) => (
-            <span key={index}>{tech}</span>
+          {project.technologies.map((tech) => (
+            <span key={tech}>{tech}</span>
           ))}
         </div>
 

@@ -15,8 +15,10 @@ import MiniProjects from "./components/MiniProjects/MiniProjects";
 import Timeline from "./components/Timeline";
 import { useState, useEffect } from "react";
 import Stats from "./components/Stats";
+import useScrollAnimation from "./useScrollAnimation";
 
 function App() {
+  useScrollAnimation();
 
   const [loading, setLoading] = useState(true);
 

@@ -68,8 +68,8 @@ function Stats() {
       <h2>My Journey in Numbers</h2>
 
       <div className="stats-grid-v2">
-        {stats.map((item, index) => (
-          <div className={`stat-card-v2 accent-${item.accent}`} key={index}>
+        {stats.map((item) => (
+          <div className={`stat-card-v2 accent-${item.accent}`} key={item.title}>
             <div className={`stat-icon-box icon-${item.accent}`}>
               {item.icon}
             </div>

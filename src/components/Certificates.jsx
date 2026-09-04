@@ -114,7 +114,7 @@ function Certificates() {
       verifyLink: "https://www.hackerrank.com/certificates/9217b589f470",
     },
     {
-      title: "Frontend Devloper (React) Certificate",
+      title: "Frontend Developer (React) Certificate",
       issuer: "HackerRank",
       description:
         "Experienced in responsive design, hooks, and modern UI/UX practices.",

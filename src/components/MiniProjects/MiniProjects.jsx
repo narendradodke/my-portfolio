@@ -6,7 +6,6 @@ import {
   FaGithub,
   FaExternalLinkAlt,
   FaCode,
-  FaCalculator,
   FaJava,
   FaPython,
   FaSearch,
@@ -34,10 +33,6 @@ function getLanguageIcon(language) {
   }
 }
 
-function getProjectIcon(title) {
-  if (title.includes("Calculator")) return <FaCalculator />;
-  return <FaCode />;
-}
 
 function MiniProjects() {
   const [selectedLanguage, setSelectedLanguage] = useState("All");

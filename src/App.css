@@ -4950,35 +4950,226 @@ text-align:center;
   justify-content: center;
 }
 
-.about-photo-frame-v2 {
-  position: relative;
-  width: 100%;
-  max-width: 380px;
-  border-radius: 28px;
-  padding: 10px;
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(20px);
-}
+/* ==========================================
+   SPLIT PROFILE CARD
+========================================== */
 
-.photo-border-glow {
-  position: absolute;
-  inset: -2px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #38bdf8, #a855f7, #ec4899);
-  z-index: -1;
-  opacity: 0.6;
-  filter: blur(8px);
-}
-
-.about-profile-img {
+.profile-split-card {
+  display: flex;
   width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: top;
+  max-width: 580px;
   border-radius: 20px;
+  background: linear-gradient(145deg, #111111, #1a1a1a);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  box-shadow: 0 10px 30px rgba(251, 191, 36, 0.15), 0 0 20px rgba(245, 185, 66, 0.1);
+  overflow: visible;
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.profile-split-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(251, 191, 36, 0.25), 0 0 25px rgba(245, 185, 66, 0.18);
+  border-color: rgba(251, 191, 36, 0.6);
+}
+
+/* Left Photo Half (~45%) */
+.split-card-photo-wrapper {
+  flex: 0 0 45%;
+  position: relative;
+  min-height: 380px;
+  overflow: visible;
+}
+
+.split-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   display: block;
+  border-top-left-radius: 19px;
+  border-bottom-left-radius: 19px;
+}
+
+/* Overlapping Floating Stat Badge (Compact Floating Chip) */
+.split-card-badge {
+  position: absolute;
+  bottom: -15px;
+  right: -20px;
+  z-index: 10;
+  width: max-content;
+  max-width: fit-content;
+  padding: 14px 20px;
+  background: rgba(15, 15, 25, 0.85);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(59, 130, 246, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.split-card-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.25);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.badge-icon-blue {
+  font-size: 24px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.split-card-badge strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.split-card-badge span {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.3;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Right Info Panel (~55%) */
+.split-card-info-panel {
+  flex: 0 0 55%;
+  background: #141414;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-right-radius: 19px;
+  border-bottom-right-radius: 19px;
+}
+
+.split-card-name {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.split-card-name .highlight-gold {
+  color: #f5b942;
+}
+
+.split-card-subtitle {
+  font-size: 15px;
+  color: #cbd5e1;
+  margin: 6px 0 0 0;
+  font-weight: 500;
+}
+
+.split-card-divider {
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #f5b942, #facc15);
+  border-radius: 2px;
+  margin: 14px 0 18px 0;
+}
+
+/* Monospace Code Snippet Block */
+.split-card-code-block {
+  font-family: "Fira Code", "Consolas", "Courier New", monospace;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.code-line {
+  display: block;
+  white-space: pre;
+}
+
+.code-indent {
+  padding-left: 18px;
+}
+
+.code-purple {
+  color: #c084fc;
+  font-weight: 600;
+}
+
+.code-orange {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.code-blue {
+  color: #38bdf8;
+}
+
+.code-green {
+  color: #4ade80;
+}
+
+.code-white {
+  color: #e2e8f0;
+}
+
+/* Open to Work Status Pill */
+.split-card-status-pill {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(245, 185, 66, 0.6);
+  background: rgba(245, 185, 66, 0.05);
+  border-radius: 999px;
+  color: #facc15;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.split-card-status-pill:hover {
+  background: rgba(245, 185, 66, 0.12);
+  border-color: rgba(245, 185, 66, 0.8);
+  box-shadow: 0 0 15px rgba(245, 185, 66, 0.2);
+}
+
+.pulsing-green-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
 }
 
 /* Floating Overlapping Stat Badge */
@@ -5082,12 +5273,13 @@ text-align:center;
 
 .about-highlight-card-v2 {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 14px;
   background: rgba(30, 41, 59, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  padding: 14px 18px;
+  padding: 16px 18px;
   backdrop-filter: blur(15px);
   transition: all 0.35s ease;
 }
@@ -5112,18 +5304,29 @@ text-align:center;
   flex-shrink: 0;
 }
 
+.highlight-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: flex-start;
+}
+
 .highlight-card-text h3 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: #fff;
-  margin: 0 0 2px;
+  margin: 0 0 4px;
+  text-align: left;
+  line-height: 1.3;
 }
 
 .highlight-card-text p {
   font-size: 13px;
   color: #94a3b8;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.4;
+  text-align: left;
 }
 
 /* Technology Pills Section */
@@ -5279,11 +5482,46 @@ body.light-mode .tech-label-title {
   .about-content-col {
     order: 2;
   }
-  .about-photo-frame-v2 {
-    max-width: 320px;
+  .profile-split-card {
+    flex-direction: column;
+    max-width: 100%;
   }
-  .about-profile-img {
-    height: 360px;
+  .split-card-photo-wrapper {
+    flex: none;
+    width: 100%;
+    height: 320px;
+    min-height: 280px;
+  }
+  .split-card-img {
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+    border-bottom-left-radius: 0;
+  }
+  .split-card-info-panel {
+    flex: none;
+    width: 100%;
+    padding: 24px 20px;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+    border-top-right-radius: 0;
+  }
+  .split-card-name {
+    font-size: 28px;
+  }
+  .split-card-badge {
+    bottom: -15px;
+    right: 15px;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .badge-icon-blue {
+    font-size: 20px;
+  }
+  .split-card-badge strong {
+    font-size: 13px;
+  }
+  .split-card-badge span {
+    font-size: 11px;
   }
 }
 

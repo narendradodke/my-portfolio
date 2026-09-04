@@ -1,4 +1,4 @@
-import { FaCode, FaLaptopCode, FaGraduationCap, FaArrowRight } from "react-icons/fa";
+import { FaGraduationCap, FaArrowRight } from "react-icons/fa";
 
 function About() {
   const highlights = [
@@ -24,16 +24,7 @@ function About() {
     },
   ];
 
-  const technologies = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Java",
-    "Python",
-    "VB.NET",
-    "MySQL",
-  ];
+
 
   return (
     <section id="about" className="about-section animate-on-scroll">
@@ -49,31 +40,70 @@ function About() {
       </div>
 
       <div className="about-split-container">
-        {/* Left Column: Photo & Visual Badges */}
+        {/* Left Column: Split Profile Card */}
         <div className="about-visual-col">
-          <div className="about-photo-frame-v2">
-            <div className="photo-border-glow"></div>
-            <img
-              src="/profile.jpg"
-              alt="Narendra Dodke"
-              className="about-profile-img"
-            />
-
-            {/* Overlapping Floating Stat Badge */}
-            <div className="about-stat-badge">
-              <FaGraduationCap className="badge-icon-gradient" />
-              <div>
-                <strong>BCA Student</strong>
-                <span>Aspiring Software Developer</span>
+          <div className="profile-split-card">
+            {/* Left Half: Profile Photo */}
+            <div className="split-card-photo-wrapper">
+              <img
+                src="/profile.jpg"
+                alt="Narendra Dodke"
+                className="split-card-img"
+              />
+              {/* Overlapping Floating Stat Badge */}
+              <div className="about-stat-badge split-card-badge">
+                <FaGraduationCap className="badge-icon-blue" />
+                <div>
+                  <strong>BCA Student</strong>
+                  <span>Aspiring Full stack Developer</span>
+                </div>
               </div>
             </div>
 
-            {/* Floating Decorative Badges */}
-            <div className="about-float-badge float-badge-1">
-              <FaCode />
-            </div>
-            <div className="about-float-badge float-badge-2">
-              <FaLaptopCode />
+            {/* Right Half: Info Panel */}
+            <div className="split-card-info-panel">
+              <h3 className="split-card-name">
+                Narendra <span className="highlight-gold">Dodke</span>
+              </h3>
+              <p className="split-card-subtitle">Full Stack Developer</p>
+              
+              <div className="split-card-divider"></div>
+
+              {/* Code Snippet Block */}
+              <div className="split-card-code-block">
+                <div className="code-line">
+                  <span className="code-purple">const</span>{" "}
+                  <span className="code-orange">developer</span>{" "}
+                  <span className="code-white">=</span>{" "}
+                  <span className="code-white">&#123;</span>
+                </div>
+                <div className="code-line code-indent">
+                  <span className="code-blue">code</span>
+                  <span className="code-white">:</span>{" "}
+                  <span className="code-green">true</span>
+                  <span className="code-white">,</span>
+                </div>
+                <div className="code-line code-indent">
+                  <span className="code-blue">coffee</span>
+                  <span className="code-white">:</span>{" "}
+                  <span className="code-green">true</span>
+                  <span className="code-white">,</span>
+                </div>
+                <div className="code-line code-indent">
+                  <span className="code-blue">passion</span>
+                  <span className="code-white">:</span>{" "}
+                  <span className="code-green">true</span>
+                </div>
+                <div className="code-line">
+                  <span className="code-white">&#125;</span>
+                </div>
+              </div>
+
+              {/* Open to Work Pill Button */}
+              <div className="split-card-status-pill">
+                <span className="pulsing-green-dot"></span>
+                <span>Open to work</span>
+              </div>
             </div>
           </div>
         </div>
@@ -111,17 +141,7 @@ function About() {
             ))}
           </div>
 
-          {/* Technology Pills */}
-          <div className="about-tech-section">
-            <span className="tech-label-title">Tech Stack & Tools:</span>
-            <div className="technology-tags-v2">
-              {technologies.map((technology) => (
-                <span className="about-tech-pill" key={technology}>
-                  {technology}
-                </span>
-              ))}
-            </div>
-          </div>
+
 
           {/* CTA Button */}
           <a href="#contact" className="about-connect-btn">

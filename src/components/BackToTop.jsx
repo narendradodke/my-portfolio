@@ -38,6 +38,8 @@ function BackToTop() {
 
       onClick={scrollTop}
 
+      aria-label="Back to top"
+
     >
 
       <FaArrowUp/>
