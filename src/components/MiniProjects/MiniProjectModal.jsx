@@ -67,6 +67,8 @@ function MiniProjectModal({ project, onClose }) {
           <img
             src={project.image}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
           />
 
         </div>

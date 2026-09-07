@@ -19,6 +19,8 @@ function ProjectModal({ project, onClose }) {
           src={project.image}
           alt={project.title}
           className="modal-image"
+          loading="lazy"
+          decoding="async"
         />
 
         <h2>{project.title}</h2>

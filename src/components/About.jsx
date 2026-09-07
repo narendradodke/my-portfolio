@@ -47,8 +47,10 @@ function About() {
             <div className="split-card-photo-wrapper">
               <img
                 src="/profile.jpg"
-                alt="Narendra Dodke"
+                alt="Narendra Dodke profile photo"
                 className="split-card-img"
+                loading="lazy"
+                decoding="async"
               />
               {/* Overlapping Floating Stat Badge */}
               <div className="about-stat-badge split-card-badge">

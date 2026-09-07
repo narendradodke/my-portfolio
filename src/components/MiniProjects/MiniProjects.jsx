@@ -130,7 +130,12 @@ function MiniProjects() {
 
                   {/* Image Preview */}
                   <div className="mini-image-box">
-                    <img src={project.image} alt={project.title} />
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
 
                   {/* Title & Desc */}

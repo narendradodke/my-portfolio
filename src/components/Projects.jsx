@@ -51,6 +51,8 @@ function Projects() {
                     src={project.image}
                     alt={project.title}
                     className="project-img-preview"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="image-overlay-glow"></div>
                 </div>

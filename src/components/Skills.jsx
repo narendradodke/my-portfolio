@@ -11,9 +11,9 @@ import {
 import { SiDotnet, SiMysql } from "react-icons/si";
 
 function Skills() {
-  const [activeCategory, setActiveCategory] = useState("Frontend");
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["Frontend", "Backend", "Database", "Tools & Others"];
+  const categories = ["All", "Frontend", "Backend", "Database", "Tools & Others"];
 
   const skills = [
     // Frontend
@@ -79,9 +79,10 @@ function Skills() {
     },
   ];
 
-  const filteredSkills = skills.filter(
-    (skill) => skill.category === activeCategory
-  );
+  const filteredSkills =
+    activeCategory === "All"
+      ? skills
+      : skills.filter((skill) => skill.category === activeCategory);
 
   return (
     <section id="skills" className="skills-section animate-on-scroll">

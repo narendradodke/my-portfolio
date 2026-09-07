@@ -28,7 +28,7 @@ function Hero() {
           href="https://github.com/narendradodke"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GitHub"
+          aria-label="GitHub Profile"
         >
           <FaGithub />
         </a>
@@ -37,7 +37,7 @@ function Hero() {
           href="https://linkedin.com/in/yourusername"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="LinkedIn"
+          aria-label="LinkedIn Profile"
         >
           <FaLinkedinIn />
         </a>
@@ -46,14 +46,14 @@ function Hero() {
           href="https://instagram.com/naren.dx"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Instagram"
+          aria-label="Instagram Profile"
         >
           <FaInstagram />
         </a>
 
         <a
           href="mailto:narendradodke@gmail.com"
-          aria-label="Mail"
+          aria-label="Send Email"
         >
           <FaEnvelope />
         </a>
@@ -148,8 +148,12 @@ function Hero() {
           <div className="profile-img-box">
             <img
               src="/profile.jpg"
-              alt="Narendra Dodke"
+              alt="Narendra Dodke profile photo"
               className="profile-image"
+              loading="eager"
+              decoding="async"
+              width="380"
+              height="380"
             />
           </div>
 
