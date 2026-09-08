@@ -152,7 +152,7 @@ const miniProjects = [
     ],
 
 
-    difficulty:"Beginner",
+    difficulty:"Advanced",
 
     duration:"1 Day",
 
@@ -171,16 +171,16 @@ const miniProjects = [
 
     title:"One Time Password Generator (OTP)",
 
-    image:"/student.png",
+    image:"/otp.png",
 
     description:
-    "Python script for generating secure, random One-Time Passwords (OTP).",
+    "javascript  for generating secure, random One-Time Passwords (OTP).",
 
 
     technologies:[
-      "Python",
-      "Random Module",
-      "Loops"
+      "javascript",
+      "css",
+      "html"
     ],
 
 
@@ -191,14 +191,53 @@ const miniProjects = [
     ],
 
 
-    difficulty:"Beginner",
+    difficulty:"Advanced",
 
     duration:"1 Day",
 
     rating:"4.6",
 
 
-    github:"#",
+    github:"https://github.com/narendradodke/OTP-SYSTEM",
+
+    live:"#"
+
+  },
+
+  {
+    id:6,
+
+    title:"Smart File Organizer",
+
+    image:"/file-organizer.png",
+
+    description:
+    "Python script for organizing files automatically.",
+
+
+    technologies:[
+      "python",
+      "javascript",
+      "css",
+      "html"
+    ],
+
+
+    features:[
+      "Organize Files by Type",
+      "Move Files to Folders",
+      "Handle Duplicates" 
+    ],
+
+
+    difficulty:"Advanced",
+
+    duration:"1 Day",
+
+    rating:"4.6",
+
+
+    github:"https://github.com/narendradodke/Smart-File-Organizer",
 
     live:"#"
 
