@@ -43,7 +43,7 @@ function Stats() {
       accent: "purple",
     },
     {
-      number: 12,
+      number: 15,
       suffix: "+",
       title: "Certificates",
       icon: <FaAward />,

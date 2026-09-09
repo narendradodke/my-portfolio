@@ -149,6 +149,17 @@ function Certificates() {
       viewLink: "https://simpli-web.app.link/e/26wwIKfua5b",
       verifyLink: "https://simpli-web.app.link/e/26wwIKfua5b",
     },
+
+    {
+      title: "Advanced Prompt Engineering Certificate",
+      issuer: "Simplilearn",
+      description:
+        "Advanced techniques for creating effective prompts and managing AI interactions.",
+      year: "09 Sep 2026",
+      viewLink: "https://simpli-web.app.link/e/jwURNDB6h6b",
+      verifyLink: "https://simpli-web.app.link/e/jwURNDB6h6b",
+    },
+
     {
       title: "REST API (Intermediate) Certificate",
       issuer: "HackerRank",
