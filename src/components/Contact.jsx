@@ -11,6 +11,7 @@ import {
   FaInstagram,
   FaWhatsapp,
 } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 function Contact() {
   const form = useRef();
@@ -106,6 +107,15 @@ function Contact() {
               aria-label="GitHub"
             >
               <FaGithub />
+            </a>
+
+            <a
+              href="https://leetcode.com/u/Narendra_dodke/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LeetCode Profile"
+            >
+              <SiLeetcode />
             </a>
 
             <a

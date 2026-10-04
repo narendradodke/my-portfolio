@@ -12,7 +12,7 @@ import {
   FaJava,
   FaPython,
 } from "react-icons/fa";
-import { SiMysql } from "react-icons/si";
+import { SiMysql, SiLeetcode } from "react-icons/si";
 
 function Hero() {
   return (
@@ -31,6 +31,15 @@ function Hero() {
           aria-label="GitHub Profile"
         >
           <FaGithub />
+        </a>
+
+        <a
+          href="https://leetcode.com/u/Narendra_dodke/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LeetCode Profile"
+        >
+          <SiLeetcode />
         </a>
 
         <a
@@ -75,11 +84,11 @@ function Hero() {
           <h2>
             <TypeAnimation
               sequence={[
-                "Programmer",
+                "Programmer...",
                 2000,
-                "Web Developer",
+                "Full Stack web Developer",
                 2000,
-                "Software Developer",
+                "Problem Solver",
                 2000,
               ]}
               speed={50}
