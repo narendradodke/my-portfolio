@@ -26,14 +26,35 @@ function Projects() {
       image: "/portfolio.png",
       accent: "cyan",
     },
+    {
+      title: "LensFrame — Photography Studio",
+      description:
+        "A luxury, cinematic photography studio website featuring dark and champagne gold UI, booking system, filterable portfolio gallery, and smooth animations.",
+      technologies: ["React", "FastAPI", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      github: "https://github.com/narendradodke/photography-website",
+      demo: "#",
+      image: "/photography.png",
+      accent: "amber",
+    },
+    {
+      title: "Luxora — Luxury Jewellery Store",
+      description:
+        "A premium full-stack jewellery e-commerce platform with elegant product catalog, bespoke consultation, cart management, and secure JWT authentication.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Framer Motion"],
+      github: "https://github.com/narendradodke/jewellery",
+      demo: "#",
+      image: "/jewellery.png",
+      accent: "pink",
+    },
   ];
 
   return (
     <>
       <section id="projects" className="projects-section animate-on-scroll">
-        <p className="section-subtitle">My Recent Work</p>
-
-        <h2>My Projects</h2>
+        <div className="scroll-reveal-right">
+          <p className="section-subtitle">My Recent Work</p>
+          <h2>My Projects</h2>
+        </div>
 
         <div className="projects-horizontal-container">
           {projects.map((project, index) => {
@@ -41,8 +62,9 @@ function Projects() {
 
             return (
               <div
-                className={`project-card-horizontal ${isEven ? "row-reverse" : ""} accent-${project.accent}`}
+                className={`project-card-horizontal ${isEven ? "row-reverse" : ""} accent-${project.accent} scroll-reveal-right`}
                 key={project.title}
+                style={{ transitionDelay: `${index * 0.15}s` }}
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Image Panel */}
@@ -76,10 +98,13 @@ function Projects() {
                   <div className="project-action-buttons">
                     <a
                       href={project.demo}
-                      target="_blank"
+                      target={project.demo !== "#" ? "_blank" : undefined}
                       rel="noopener noreferrer"
                       className="project-btn-v2 view-live-btn"
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (project.demo === "#") e.preventDefault();
+                      }}
                     >
                       <FaExternalLinkAlt /> View Live
                     </a>

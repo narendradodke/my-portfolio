@@ -3871,6 +3871,11 @@ text-align:center;
   margin: 0 auto;
 }
 
+body:not(.light-mode) .skill-devicon-img[alt="Socket.io"],
+body:not(.light-mode) .skill-devicon-img[alt="Vercel"] {
+  filter: brightness(0) invert(1);
+}
+
 .skill-react-icon {
   display: inline-flex;
   align-items: center;
@@ -4159,6 +4164,13 @@ text-align:center;
   transition: all 0.35s ease;
 }
 
+.ai-tool-icon-wrap .skill-devicon-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
 .ai-tool-card:hover .ai-tool-icon-wrap {
   transform: scale(1.1) rotate(4deg);
   border-color: rgba(0, 198, 255, 0.45);
@@ -4243,19 +4255,36 @@ text-align:center;
 }
 
 /* ==========================================
-   ANIMATION FROM RIGHT SIDE
+   GLOBAL SCROLL-TRIGGERED REVEAL ANIMATIONS
+   (Smooth glide from right matching skills section)
 ========================================== */
 
-.skill-animate-right {
+.skill-animate-right,
+.scroll-reveal-right,
+.scroll-reveal {
   opacity: 0;
   transform: translateX(65px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
-.skill-animate-right.in-view {
+.skill-animate-right.in-view,
+.scroll-reveal-right.in-view,
+.scroll-reveal.in-view {
   opacity: 1;
   transform: translateX(0);
+}
+
+.scroll-reveal-up {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.scroll-reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================================
@@ -4286,8 +4315,15 @@ text-align:center;
     padding: 70px 5%;
   }
 
-  .skill-animate-right {
+  .skill-animate-right,
+  .scroll-reveal-right,
+  .scroll-reveal {
     transform: translateX(35px);
+    transition-duration: 0.65s;
+  }
+
+  .scroll-reveal-up {
+    transform: translateY(25px);
     transition-duration: 0.65s;
   }
 
@@ -4487,6 +4523,22 @@ text-align:center;
 .project-card-horizontal.accent-cyan:hover {
   border-color: rgba(56, 189, 248, 0.6);
   box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+}
+
+.project-card-horizontal.accent-amber {
+  border-color: rgba(245, 158, 11, 0.25);
+}
+.project-card-horizontal.accent-amber:hover {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 15px 40px rgba(245, 158, 11, 0.2);
+}
+
+.project-card-horizontal.accent-pink {
+  border-color: rgba(236, 72, 153, 0.25);
+}
+.project-card-horizontal.accent-pink:hover {
+  border-color: rgba(236, 72, 153, 0.6);
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.2);
 }
 
 /* Image Panel */

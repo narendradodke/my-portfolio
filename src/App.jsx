@@ -19,8 +19,8 @@ const Footer = lazy(() => import("./components/Footer"));
 const BackToTop = lazy(() => import("./components/BackToTop"));
 
 function App() {
-  useScrollAnimation();
   const [loading, setLoading] = useState(true);
+  useScrollAnimation(loading);
 
   useEffect(() => {
     const timer = setTimeout(() => {

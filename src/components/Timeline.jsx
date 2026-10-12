@@ -50,8 +50,10 @@ function Timeline() {
 
   return (
     <section id="timeline" className="timeline-section animate-on-scroll">
-      <p className="section-subtitle">My Journey</p>
-      <h2>Experience Timeline</h2>
+      <div className="scroll-reveal-right">
+        <p className="section-subtitle">My Journey</p>
+        <h2>Experience Timeline</h2>
+      </div>
 
       <div className="timeline-wrapper-v2">
         {/* Central Vertical Gradient Line */}
@@ -62,8 +64,9 @@ function Timeline() {
 
           return (
             <div
-              className={`timeline-item-v2 ${isLeft ? "left" : "right"}`}
+              className={`timeline-item-v2 ${isLeft ? "left" : "right"} scroll-reveal-right`}
               key={item.id}
+              style={{ transitionDelay: `${index * 0.12}s` }}
             >
               {/* Central Glowing Node Dot */}
               <div className="timeline-dot-v2">

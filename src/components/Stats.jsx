@@ -29,14 +29,14 @@ function AnimatedCounter({ end, duration = 2000 }) {
 function Stats() {
   const stats = [
     {
-      number: 2,
+      number: 4,
       suffix: "+",
       title: "Projects",
       icon: <FaLaptopCode />,
       accent: "blue",
     },
     {
-      number: 10,
+      number: 25,
       suffix: "+",
       title: "Skills",
       icon: <FaStar />,
@@ -64,12 +64,18 @@ function Stats() {
       <div className="stats-blob stats-blob-purple"></div>
       <div className="stats-blob stats-blob-blue"></div>
 
-      <p className="section-subtitle">Portfolio Stats</p>
-      <h2>My Journey in Numbers</h2>
+      <div className="scroll-reveal-right">
+        <p className="section-subtitle">Portfolio Stats</p>
+        <h2>My Journey in Numbers</h2>
+      </div>
 
       <div className="stats-grid-v2">
-        {stats.map((item) => (
-          <div className={`stat-card-v2 accent-${item.accent}`} key={item.title}>
+        {stats.map((item, index) => (
+          <div
+            className={`stat-card-v2 accent-${item.accent} scroll-reveal-right`}
+            key={item.title}
+            style={{ transitionDelay: `${index * 0.12}s` }}
+          >
             <div className={`stat-icon-box icon-${item.accent}`}>
               {item.icon}
             </div>

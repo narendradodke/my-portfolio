@@ -173,16 +173,22 @@ function Certificates() {
 
   return (
     <section id="certificates" className="certificates-section animate-on-scroll">
-      <p className="section-subtitle">My Achievements</p>
-      <h2>Certificates</h2>
+      <div className="scroll-reveal-right">
+        <p className="section-subtitle">My Achievements</p>
+        <h2>Certificates</h2>
+      </div>
 
       <div className="certificates-grid-v2">
-        {certificates.map((cert) => {
+        {certificates.map((cert, index) => {
           const category = getCategory(cert.title, cert.issuer);
           const accentClass = getAccent(category);
 
           return (
-            <div className={`cert-card-v2 ${accentClass}`} key={cert.title}>
+            <div
+              className={`cert-card-v2 ${accentClass} scroll-reveal-right`}
+              key={cert.title}
+              style={{ transitionDelay: `${(index % 3) * 0.12}s` }}
+            >
               {/* Top Certificate Mini Mockup Thumbnail */}
               <div className="mini-cert-thumbnail">
                 <div className="cert-inner-frame">

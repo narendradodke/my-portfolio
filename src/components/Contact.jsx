@@ -44,12 +44,14 @@ function Contact() {
 
   return (
     <section id="contact" className="contact-section animate-on-scroll">
-      <p className="section-subtitle">Get In Touch</p>
-      <h2>Contact Me</h2>
+      <div className="scroll-reveal-right">
+        <p className="section-subtitle">Get In Touch</p>
+        <h2>Contact Me</h2>
+      </div>
 
       <div className="contact-split-grid">
         {/* Left Column: Contact Info */}
-        <div className="contact-info-col">
+        <div className="contact-info-col scroll-reveal-right" style={{ transitionDelay: "0.1s" }}>
           <h3 className="contact-info-title">Let's Work Together</h3>
           <p className="contact-info-desc">
             If you have any questions, project ideas or opportunities, feel free
@@ -148,7 +150,7 @@ function Contact() {
         </div>
 
         {/* Right Column: Contact Form */}
-        <div className="contact-form-col">
+        <div className="contact-form-col scroll-reveal-right" style={{ transitionDelay: "0.2s" }}>
           <form ref={form} onSubmit={sendEmail} className="contact-form-glass-card">
             <div className="form-group-v2">
               <label>Your Name</label>

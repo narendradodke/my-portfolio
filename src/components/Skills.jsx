@@ -26,6 +26,10 @@ import {
   SiGithubcopilot,
   SiAnthropic,
   SiDeepseek,
+  SiSqlite,
+  SiPostman,
+  SiJest,
+  SiSocketdotio,
 } from "react-icons/si";
 import {
   TbBrandVscode,
@@ -130,6 +134,7 @@ function Skills() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("in-view");
+            animObserver.unobserve(entry.target);
           }
         });
       },
@@ -259,11 +264,31 @@ function Skills() {
           iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
           fallbackIcon: <SiMongodb style={{ color: "#00ed64" }} />,
         },
+        {
+          name: "SQLite",
+          iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
+          fallbackIcon: <SiSqlite style={{ color: "#003b57" }} />,
+        },
       ],
     },
     {
       title: "Testing & Tools",
       skills: [
+        {
+          name: "Postman",
+          iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+          fallbackIcon: <SiPostman style={{ color: "#ff6c37" }} />,
+        },
+        {
+          name: "Jest",
+          iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+          fallbackIcon: <SiJest style={{ color: "#c21325" }} />,
+        },
+        {
+          name: "Socket.io",
+          iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
+          fallbackIcon: <SiSocketdotio style={{ color: "#ffffff" }} />,
+        },
         {
           name: "PyTest",
           iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original.svg",
@@ -290,51 +315,61 @@ function Skills() {
     {
       name: "ChatGPT",
       desc: "Problem solving, debugging & code reviews",
+      iconUrl: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
       fallbackIcon: <TbBrandOpenai style={{ color: "#10a37f" }} />,
     },
     {
       name: "DeepSeek",
       desc: "Open-source reasoning models & code intelligence",
+      iconUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/deepseek-color.svg",
       fallbackIcon: <SiDeepseek style={{ color: "#1e88e5" }} />,
     },
     {
       name: "Claude",
       desc: "AI-assisted architecture & refactoring",
+      iconUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/claude-color.svg",
       fallbackIcon: <SiAnthropic style={{ color: "#d97757" }} />,
     },
     {
       name: "Claude Code",
       desc: "Terminal-first AI coding assistant for real-time engineering workflows",
+      iconUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/claudecode-color.svg",
       fallbackIcon: <SiAnthropic style={{ color: "#f59e0b" }} />,
     },
     {
       name: "Cursor",
       desc: "AI-powered code editor for productivity",
+      iconUrl: "https://cdn.simpleicons.org/cursor/white",
       fallbackIcon: <CursorIcon />,
     },
     {
       name: "Lovable",
       desc: "Full-stack AI web app builder & rapid prototyping",
+      iconUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/lovable-color.svg",
       fallbackIcon: <LovableIcon />,
     },
     {
       name: "Z Code",
       desc: "AI-driven code generation & smart engineering workflows",
+      iconUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/zhipu-color.svg",
       fallbackIcon: <ZCodeIcon />,
     },
     {
       name: "Copilot",
       desc: "Automated code generation & documentation",
+      iconUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/copilot-color.svg",
       fallbackIcon: <SiGithubcopilot style={{ color: "#38bdf8" }} />,
     },
     {
       name: "Codex",
       desc: "AI-driven coding workflows for rapid prototyping and iteration",
+      iconUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/codex-color.svg",
       fallbackIcon: <TbBrandOpenai style={{ color: "#818cf8" }} />,
     },
     {
       name: "Antigravity",
       desc: "AI-assisted workflows for creative and product experimentation",
+      iconUrl: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-svg/icons/antigravity-color.svg",
       fallbackIcon: <AntigravityIcon />,
     },
     {

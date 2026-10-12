@@ -4,35 +4,10 @@ import { useState } from "react";
 import MiniProjectModal from "./MiniProjectModal";
 import {
   FaGithub,
-  FaExternalLinkAlt,
-  FaCode,
-  FaJava,
-  FaPython,
   FaSearch,
   FaFolderOpen,
 } from "react-icons/fa";
-import { SiJavascript, SiReact, SiPhp } from "react-icons/si";
-import { TbBrandCpp } from "react-icons/tb";
-
-function getLanguageIcon(language) {
-  switch (language) {
-    case "Java":
-      return <FaJava style={{ color: "#f89820" }} />;
-    case "Python":
-      return <FaPython style={{ color: "#3776ab" }} />;
-    case "JavaScript":
-      return <SiJavascript style={{ color: "#f7df1e" }} />;
-    case "React":
-      return <SiReact style={{ color: "#61dafb" }} />;
-    case "C & C++":
-      return <TbBrandCpp style={{ color: "#00599c" }} />;
-    case "PHP":
-      return <SiPhp style={{ color: "#777bb4" }} />;
-    default:
-      return <FaCode style={{ color: "#38bdf8" }} />;
-  }
-}
-
+import { FiExternalLink } from "react-icons/fi";
 
 function MiniProjects() {
   const [selectedLanguage, setSelectedLanguage] = useState("All");
@@ -68,11 +43,13 @@ function MiniProjects() {
   return (
     <>
       <section id="mini-projects" className="mini-projects-section animate-on-scroll">
-        <p className="section-subtitle">Practice Makes Perfect</p>
-        <h2>Mini Projects</h2>
+        <div className="scroll-reveal-right">
+          <p className="section-subtitle">Practice Makes Perfect</p>
+          <h2>Mini Projects</h2>
+        </div>
 
         {/* Filter Tabs */}
-        <div className="filter-container">
+        <div className="filter-container scroll-reveal-right" style={{ transitionDelay: "0.1s" }}>
           {languages.map((language) => (
             <button
               key={language}
@@ -89,7 +66,7 @@ function MiniProjects() {
         </div>
 
         {/* Search */}
-        <div className="search-box">
+        <div className="search-box scroll-reveal-right" style={{ transitionDelay: "0.15s" }}>
           <FaSearch />
           <input
             type="text"
@@ -103,75 +80,72 @@ function MiniProjects() {
         <div className="mini-projects-grid">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project, idx) => {
-              const accents = ["accent-blue", "accent-purple", "accent-pink", "accent-cyan"];
-              const accentClass = accents[idx % accents.length];
-
               return (
                 <div
-                  className={`mini-card ${accentClass}`}
+                  className="mini-card scroll-reveal-right"
                   key={project.id || project.title}
+                  style={{ transitionDelay: `${(idx % 6) * 0.08}s` }}
                   onClick={() => setSelectedProject(project)}
                 >
-                  {/* Top Bar inside Card */}
-                  <div className="card-top-bar">
-                    <div className="card-icon-box">
-                      {getLanguageIcon(
-                        project.language || project.technologies?.[0]
-                      )}
+                  {/* Main Card Content (Split Layout) */}
+                  <div className="mini-card-main">
+                    {/* Left Thumbnail */}
+                    <div className="mini-thumbnail-wrap">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        decoding="async"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                          e.target.parentElement.classList.add("fallback-bg");
+                        }}
+                      />
                     </div>
-                    <span
-                      className={`difficulty-pill ${
-                        project.difficulty?.toLowerCase() || ""
-                      }`}
-                    >
-                      ● {project.difficulty}
-                    </span>
+
+                    {/* Right Info */}
+                    <div className="mini-info-wrap">
+                      <h3 className="mini-card-title">{project.title}</h3>
+                      <p className="mini-card-desc">{project.description}</p>
+                      
+                      {/* Tech Badges */}
+                      <div className="mini-tech-list">
+                        {project.technologies?.slice(0, 3).map((tech) => (
+                          <span key={tech} className="mini-tech-pill">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Image Preview */}
-                  <div className="mini-image-box">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
+                  {/* Card Footer Actions */}
+                  <div className="mini-card-footer">
+                    {project.github ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mini-footer-link view-code"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <FaGithub />
+                        <span>View Code</span>
+                      </a>
+                    ) : <span />}
 
-                  {/* Title & Desc */}
-                  <h3 className="mini-card-title">{project.title}</h3>
-                  <p className="mini-card-desc">{project.description}</p>
-
-                  {/* Tech Badges */}
-                  <div className="mini-tech-list">
-                    {project.technologies?.map((tech) => (
-                      <span key={tech} className="mini-tech-pill">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="mini-card-buttons">
-                    <a
-                      href={project.live || "#"}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mini-btn live-btn"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <FaExternalLinkAlt /> Live Demo
-                    </a>
-
-                    <a
-                      href={project.github || "#"}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mini-btn github-btn"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <FaGithub /> GitHub
-                    </a>
+                    {project.live ? (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mini-footer-link live-demo"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <FiExternalLink />
+                        <span>Live Demo</span>
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               );

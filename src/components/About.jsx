@@ -32,7 +32,7 @@ function About() {
       <div className="about-blob about-blob-purple"></div>
       <div className="about-blob about-blob-blue"></div>
 
-      <div className="about-heading-center">
+      <div className="about-heading-center scroll-reveal-right">
         <p className="section-subtitle">Get To Know Me</p>
         <h2>
           About <span>Me</span>
@@ -41,7 +41,7 @@ function About() {
 
       <div className="about-split-container">
         {/* Left Column: Split Profile Card */}
-        <div className="about-visual-col">
+        <div className="about-visual-col scroll-reveal-right" style={{ transitionDelay: "0.1s" }}>
           <div className="profile-split-card">
             {/* Left Half: Profile Photo */}
             <div className="split-card-photo-wrapper">
@@ -111,7 +111,7 @@ function About() {
         </div>
 
         {/* Right Column: Content & Highlights */}
-        <div className="about-content-col">
+        <div className="about-content-col scroll-reveal-right" style={{ transitionDelay: "0.2s" }}>
           <div className="about-description-v2">
             <p className="about-intro-v2">
               I'm a passionate developer who loves turning ideas into modern and
@@ -132,8 +132,12 @@ function About() {
 
           {/* 2x2 Highlights Grid */}
           <div className="about-highlights-grid-v2">
-            {highlights.map((item) => (
-              <div className="about-highlight-card-v2" key={item.title}>
+            {highlights.map((item, idx) => (
+              <div
+                className="about-highlight-card-v2 scroll-reveal-right"
+                key={item.title}
+                style={{ transitionDelay: `${0.25 + idx * 0.08}s` }}
+              >
                 <div className="highlight-emoji-box">{item.icon}</div>
                 <div className="highlight-card-text">
                   <h3>{item.title}</h3>
@@ -143,10 +147,12 @@ function About() {
             ))}
           </div>
 
-
-
           {/* CTA Button */}
-          <a href="#contact" className="about-connect-btn">
+          <a
+            href="#contact"
+            className="about-connect-btn scroll-reveal-right"
+            style={{ transitionDelay: "0.55s" }}
+          >
             <span>Let's Connect</span>
             <FaArrowRight />
           </a>

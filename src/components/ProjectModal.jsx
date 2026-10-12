@@ -45,9 +45,12 @@ function ProjectModal({ project, onClose }) {
 
           <a
             href={project.demo}
-            target="_blank"
+            target={project.demo !== "#" ? "_blank" : undefined}
             rel="noopener noreferrer"
             className="project-btn demo-btn"
+            onClick={(e) => {
+              if (project.demo === "#") e.preventDefault();
+            }}
           >
             Live Demo
           </a>
