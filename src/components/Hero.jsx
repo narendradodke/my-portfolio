@@ -41,9 +41,6 @@ function Hero({ isLoaderDone = true }) {
       ? "active"
       : "pending";
 
-  const firstName = "Narendra";
-  const lastName = "Dodke";
-
   return (
     <section
       id="home"
@@ -115,35 +112,7 @@ function Hero({ isLoaderDone = true }) {
 
         <p className="intro">Hi, I'm</p>
 
-        <h1 className="gradient-name">
-          <span className="assembly-word">
-            {firstName.split("").map((letter, idx) => (
-              <span
-                key={`first-${idx}`}
-                className="assembly-letter"
-                style={{
-                  animationDelay: `${0.7 + idx * 0.05}s`,
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </span>
-          <span className="assembly-space"> </span>
-          <span className="assembly-word">
-            {lastName.split("").map((letter, idx) => (
-              <span
-                key={`last-${idx}`}
-                className="assembly-letter"
-                style={{
-                  animationDelay: `${0.7 + (firstName.length + 1 + idx) * 0.05}s`,
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </span>
-        </h1>
+        <h1 className="gradient-name">Narendra Dodke</h1>
 
         <div className="hero-role-row">
           <span className="role-prefix">I am a</span>
