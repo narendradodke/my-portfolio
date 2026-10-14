@@ -119,3 +119,25 @@ code {
 html{
   scroll-behavior:smooth;
 }
+
+/* Loader Utility Helpers */
+.text-slate-500 {
+  color: #64748b;
+}
+
+.text-slate-400 {
+  color: #94a3b8;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.tracking-\[0\.3em\] {
+  letter-spacing: 0.3em;
+}
+
+.portfolio-app-root {
+  width: 100%;
+  min-height: 100vh;
+}

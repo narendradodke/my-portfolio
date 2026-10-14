@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import {
   FaGithub,
@@ -13,10 +14,47 @@ import {
   FaPython,
 } from "react-icons/fa";
 import { SiMysql, SiLeetcode } from "react-icons/si";
+import "../styles/assembly.css";
 
-function Hero() {
+function Hero({ isLoaderDone = true }) {
+  const [isAssemblyComplete, setIsAssemblyComplete] = useState(false);
+
+  useEffect(() => {
+    if (!isLoaderDone) return;
+
+    // After all assembly animations finish (~3.6s), mark complete so elements return to base static/infinite float states
+    const timer = setTimeout(() => {
+      setIsAssemblyComplete(true);
+    }, 3600);
+
+    return () => clearTimeout(timer);
+  }, [isLoaderDone]);
+
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const animationState =
+    prefersReducedMotion || isAssemblyComplete
+      ? "complete"
+      : isLoaderDone
+      ? "active"
+      : "pending";
+
+  const firstName = "Narendra";
+  const lastName = "Dodke";
+
   return (
-    <section id="home" className="hero animate-on-scroll">
+    <section
+      id="home"
+      className={`hero animate-on-scroll ${
+        animationState === "active"
+          ? "hero-assembly-active"
+          : animationState === "pending"
+          ? "hero-assembly-pending"
+          : "hero-assembly-complete"
+      }`}
+    >
       {/* Subtle Background Grid & Glow Blobs */}
       <div className="hero-grid-pattern"></div>
       <div className="hero-blob hero-blob-purple"></div>
@@ -77,7 +115,35 @@ function Hero() {
 
         <p className="intro">Hi, I'm</p>
 
-        <h1 className="gradient-name">Narendra Dodke</h1>
+        <h1 className="gradient-name">
+          <span className="assembly-word">
+            {firstName.split("").map((letter, idx) => (
+              <span
+                key={`first-${idx}`}
+                className="assembly-letter"
+                style={{
+                  animationDelay: `${0.7 + idx * 0.05}s`,
+                }}
+              >
+                {letter}
+              </span>
+            ))}
+          </span>
+          <span className="assembly-space"> </span>
+          <span className="assembly-word">
+            {lastName.split("").map((letter, idx) => (
+              <span
+                key={`last-${idx}`}
+                className="assembly-letter"
+                style={{
+                  animationDelay: `${0.7 + (firstName.length + 1 + idx) * 0.05}s`,
+                }}
+              >
+                {letter}
+              </span>
+            ))}
+          </span>
+        </h1>
 
         <div className="hero-role-row">
           <span className="role-prefix">I am a</span>

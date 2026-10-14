@@ -1,0 +1,222 @@
+/* =================================================== */
+/* PREMIUM FULL-SCREEN LOADING SCREEN STYLING */
+/* =================================================== */
+
+.loader-root {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  overflow: hidden;
+  pointer-events: all;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Split Screen Curtains */
+.loader-curtain-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #0f172a;
+  will-change: transform;
+  z-index: 1;
+}
+
+.loader-curtain-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #0f172a;
+  will-change: transform;
+  z-index: 1;
+}
+
+/* Foreground Content Container */
+.loader-content {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Center Wrapper */
+.loader-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Spinner Area */
+.loader-spinner-container {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+/* Subtle Purple Glow behind Spinner */
+.loader-spinner-glow {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  filter: blur(30px);
+  opacity: 0.2;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Outer Ring */
+.loader-spinner-outer {
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 3.5px solid rgba(255, 255, 255, 0.18);
+  border-top-color: transparent;
+  will-change: transform;
+}
+
+/* Inner Ring */
+.loader-spinner-inner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3.5px solid #8b5cf6;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  will-change: transform;
+}
+
+/* Name Reveal */
+.loader-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.loader-name-first {
+  color: #ffffff;
+  display: inline-block;
+}
+
+.loader-name-last {
+  color: #8b5cf6;
+  display: inline-block;
+}
+
+/* Bottom Bar / Labels */
+.loader-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.loader-label-portfolio {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.loader-counter {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: #94a3b8;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+/* Very Bottom Purple Progress Line */
+.loader-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.loader-progress-bar {
+  height: 100%;
+  background: #8b5cf6;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.7);
+  will-change: width;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .loader-spinner-container {
+    width: 74px;
+    height: 74px;
+    margin-bottom: 20px;
+  }
+  .loader-spinner-glow {
+    width: 90px;
+    height: 90px;
+  }
+  .loader-spinner-outer {
+    width: 66px;
+    height: 66px;
+    border-width: 3px;
+  }
+  .loader-spinner-inner {
+    width: 42px;
+    height: 42px;
+    border-width: 3px;
+  }
+  .loader-name {
+    font-size: 26px;
+    gap: 8px;
+  }
+  .loader-bottom-bar {
+    padding: 18px 20px;
+  }
+  .loader-label-portfolio {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+  }
+  .loader-counter {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .loader-name {
+    font-size: 24px;
+  }
+  .loader-bottom-bar {
+    padding: 14px 16px;
+  }
+}

@@ -1,0 +1,419 @@
+/* ==========================================================================
+   HERO ASSEMBLY / BUILD-UP ENTRANCE ANIMATION
+   ==========================================================================
+   All animation keyframes, delays, and choreography for the Hero entrance.
+   Does not modify any existing layout, position, color, or responsive rules.
+   ========================================================================== */
+
+/* 1. Initial State: Hidden before assembly begins */
+.hero-assembly-pending {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+
+/* 2. Hero Stage Reveal (0.0s - 0.4s) */
+.hero-assembly-active {
+  animation: heroStageFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes heroStageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 3. Background Elements (Grid & Glow Blobs) (0.1s - 1.2s) */
+.hero-assembly-active .hero-grid-pattern {
+  animation: gridAssemble 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  will-change: transform, opacity;
+}
+
+@keyframes gridAssemble {
+  0% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-assembly-active .hero-blob-purple {
+  animation: purpleBlobAssemble 1.2s ease-out 0.1s both;
+  will-change: filter, opacity;
+}
+
+@keyframes purpleBlobAssemble {
+  0% {
+    opacity: 0;
+    filter: blur(220px);
+  }
+  100% {
+    opacity: 0.25;
+    filter: blur(150px);
+  }
+}
+
+.hero-assembly-active .hero-blob-pink {
+  animation: pinkBlobAssemble 1.2s ease-out 0.1s both;
+  will-change: filter, opacity;
+}
+
+@keyframes pinkBlobAssemble {
+  0% {
+    opacity: 0;
+    filter: blur(220px);
+  }
+  100% {
+    opacity: 0.2;
+    filter: blur(150px);
+  }
+}
+
+/* 4. Availability Badge (0.6s, duration 0.5s) */
+.hero-assembly-active .available-badge {
+  transform-origin: left center;
+  animation: badgeScaleX 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+  will-change: transform, opacity;
+}
+
+@keyframes badgeScaleX {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.hero-assembly-active .available-badge span {
+  animation: badgeContentFade 0.3s ease-out 0.85s both;
+}
+
+@keyframes badgeContentFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Intro Text ("Hi, I'm") (0.6s) */
+.hero-assembly-active .intro {
+  animation: introSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+  will-change: transform, opacity;
+}
+
+@keyframes introSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 5. Name — "Narendra Dodke" Letters Drop From Sky (0.7s - 1.6s) */
+.assembly-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.assembly-space {
+  display: inline;
+}
+
+.assembly-letter {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.hero-assembly-active .assembly-letter {
+  animation: letterDrop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes letterDrop {
+  0% {
+    transform: translateY(-120px) rotate(-15deg) scale(0.5);
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Role Row ("I am a Programmer...") (1.4s) */
+.hero-assembly-active .hero-role-row {
+  animation: roleRowSlide 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.4s both;
+  will-change: transform, opacity;
+}
+
+@keyframes roleRowSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 6. Description Text (1.6s, duration 0.7s) */
+.hero-assembly-active .hero-description {
+  animation: descSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.6s both;
+  will-change: transform, opacity;
+}
+
+@keyframes descSlideIn {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 7. Action Buttons (2.0s & 2.15s, duration 0.5s) */
+.hero-assembly-active .download-btn {
+  animation: buttonPopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.0s both;
+  will-change: transform, opacity;
+}
+
+.hero-assembly-active .view-work-btn {
+  animation: buttonPopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.15s both;
+  will-change: transform, opacity;
+}
+
+@keyframes buttonPopIn {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Fixed Social Bar on Left (1.8s) */
+.hero-assembly-active .fixed-social-bar {
+  animation: socialBarFadeIn 0.6s ease-out 1.8s both;
+  will-change: transform, opacity;
+}
+
+@keyframes socialBarFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* 8. Rotating Gradient Ring (1.2s, duration 1.6s) */
+.hero-assembly-active .gradient-ring {
+  animation: ringEntrance 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both,
+             rotateRing 8s linear 1.2s infinite;
+  will-change: opacity, scale;
+}
+
+@keyframes ringEntrance {
+  0% {
+    opacity: 0;
+    scale: 0.8;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* 9. Profile Image Box (1.4s, duration 0.9s) */
+.hero-assembly-active .profile-img-box {
+  animation: profileImageAssembly 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 1.4s both;
+  will-change: transform, opacity;
+}
+
+@keyframes profileImageAssembly {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Open To Work Badge (2.1s) */
+.hero-assembly-active .open-to-work-badge {
+  animation: openBadgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.1s both;
+  will-change: transform, opacity;
+}
+
+@keyframes openBadgePop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Sparkle Particles (2.3s) */
+.hero-assembly-active .sparkle-particle {
+  animation: particleEntrance 0.6s ease-out 2.3s both;
+}
+
+@keyframes particleEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 10. Floating Tech Stack Cards (2.0s onwards, stagger 0.15s, duration 0.8s) */
+.hero-assembly-active .tech-float-card.float-top-left {
+  animation: cardFlyInTL 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 2.0s both,
+             floatTL 4s ease-in-out 2.8s infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes cardFlyInTL {
+  0% {
+    transform: translate(-300px, -200px) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.hero-assembly-active .tech-float-card.float-top-right {
+  animation: cardFlyInTR 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 2.15s both,
+             floatTR 4.5s ease-in-out 2.95s infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes cardFlyInTR {
+  0% {
+    transform: translate(300px, -200px) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.hero-assembly-active .tech-float-card.float-mid-left {
+  animation: cardFlyInML 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 2.30s both,
+             floatML 3.8s ease-in-out 3.10s infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes cardFlyInML {
+  0% {
+    transform: translate(-320px, 0px) rotate(-35deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.hero-assembly-active .tech-float-card.float-mid-right {
+  animation: cardFlyInMR 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 2.45s both,
+             floatMR 4.2s ease-in-out 3.25s infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes cardFlyInMR {
+  0% {
+    transform: translate(320px, 0px) rotate(35deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.hero-assembly-active .tech-float-card.float-bot-left {
+  animation: cardFlyInBL 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 2.60s both,
+             floatBL 4.6s ease-in-out 3.40s infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes cardFlyInBL {
+  0% {
+    transform: translate(-300px, 200px) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.hero-assembly-active .tech-float-card.float-bot-right {
+  animation: cardFlyInBR 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 2.75s both,
+             floatBR 3.9s ease-in-out 3.55s infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes cardFlyInBR {
+  0% {
+    transform: translate(300px, 200px) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion: Instantly render final static state
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .hero-assembly-pending,
+  .hero-assembly-active,
+  .hero-assembly-active * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    scale: 1 !important;
+    visibility: visible !important;
+  }
+}
