@@ -140,7 +140,7 @@ function Hero({ isLoaderDone = true }) {
         </p>
 
         <div className="hero-buttons">
-          <a href="/resume.pdf" download className="btn download-btn">
+          <a href="/Narendra Dodke resume.pdf" download className="btn download-btn">
             <FaDownload />
             <span>Download Resume</span>
           </a>
